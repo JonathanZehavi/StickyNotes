@@ -29,19 +29,18 @@ function createNoteElement(id, content) {
       deleteNote(id, note);
     }
   });
-  note.addEventListener('blur', (e) => updateNote(e, id))
-
+  note.addEventListener("change", (e) => updateNote(e, id));
   return note;
 }
 function updateNote(e, noteID) {
-  let notes = getNotes()
-  notes = notes.map(note => {
+  let notes = getNotes();
+  notes = notes.map((note) => {
     if (note.id === noteID) {
-      note.content = e.target.value
+      note.content = e.target.value;
     }
-    return note
-  })
-  saveNotes(notes)
+    return note;
+  });
+  saveNotes(notes);
 }
 
 function addNote() {
