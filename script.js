@@ -3,7 +3,7 @@ const addNotesButton = notesContainer.querySelector(".add-note");
 
 getNotes().forEach((note) => {
   const noteElement = createNoteElement(note.id, note.content);
-  notesContainer.insertBefore(noteElement, addNotesButton);
+  notesContainer.appendChild(noteElement, addNotesButton);
 });
 
 function getNotes() {
