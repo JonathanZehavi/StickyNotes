@@ -25,13 +25,23 @@ function createNoteElement(id, content) {
 
   note.addEventListener("dblclick", () => {
     const doDelete = confirm("Are you sure you want to delete this note? ");
-
     if (doDelete) {
       deleteNote(id, note);
     }
   });
+  note.addEventListener('blur', (e) => updateNote(e, id))
 
   return note;
+}
+function updateNote(e, noteID) {
+  let notes = getNotes()
+  notes = notes.map(note => {
+    if (note.id === noteID) {
+      note.content = e.target.value
+    }
+    return note
+  })
+  saveNotes(notes)
 }
 
 function addNote() {
