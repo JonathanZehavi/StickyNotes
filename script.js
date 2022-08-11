@@ -51,7 +51,7 @@ function addNote() {
   };
 
   const noteElement = createNoteElement(notesObject.id, notesObject.content);
-  notesContainer.insertBefore(noteElement, addNotesButton);
+  notesContainer.appendChild(noteElement, addNotesButton);
 
   notes.push(notesObject);
   saveNotes(notes);
