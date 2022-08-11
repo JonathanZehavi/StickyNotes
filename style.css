@@ -22,7 +22,7 @@ body {
 .add-note{
     outline: none;
     border-radius: 10px;
-    border: 2px solid;
+    border: 2px solid blue;
     font-size: 150px;
     cursor: pointer;
     height: 200px;
